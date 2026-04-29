@@ -99,6 +99,15 @@ O AlphaZero também requer que sejam determinados de antemão:
 - o *conjunto* de todos os #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador"))) que participarão de dada @partida.
 
 
+= Sistemas
+
+O significante #stress[@jogo] é definido como: #stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou *encerramento* @suits:1967:what_is_a_game#footnote[
+  #cite(form: "full", <suits:1967:what_is_a_game>)
+].
+
+Computacionalmente, um @jogo pode ser representado como uma classe
+
+
 = Domínio
 
 #stress[Nem todos] os @jogo:pl são computacionalmente *equiparáveis*!
@@ -111,6 +120,7 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 - Cada *jogada* é representada como um @turno,
 - que é representado como um *nó* de uma *árvore* de busca.
 - Cada *@movimento* leva a um novo *@estado*.
+- A informação dos @estado:pl deve ser *completa*, visível a todos os @jogador:pl.
 
 Seria #stress[impossível] utilizar os os métodos de @mcts e AlphaZero para esses @jogo:pl.
 
@@ -140,6 +150,8 @@ Isso destaca a #stress[abstração] realizada, ao considerar apenas os aspectos 
 
 Reduz as partidas a um conjunto de turnos; usa apenas tuplas (turno, resultado) para treinar o modelo
 
+
 = Experimento
+
 
 = Reprodutibilidade
