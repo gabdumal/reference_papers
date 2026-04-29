@@ -37,7 +37,7 @@ A técnica usa dois passos de *treinamento*:
 
 = Hipótese
 
-Os autores acreditam que é possível aprimorar o estado-da-arte por #stress[aproximações sucessivas] e consolidar o paradigma em crise.
+Os autores acreditam que é possível consolidar o paradigma em crise.
 
 Nesse cenário, eles declaram como hipótese que:
 - é possível gerar *@agint:pl* #stress[genéricos] que
@@ -50,6 +50,22 @@ Para comprová-la, os autores:
 - aplicam-na aos jogos Go, Xadrez e Shogi, e
 - comparam o desempenho de seus @agint:pl a demais algoritmos de *referência* que auto-jogam os respectivos jogos.
 
+
+= Aproximações sucessivas
+
+Como ferramenta para validar a hipótese, os autores partem da tecnologia *anterior* (AlphaGo) para a *evolucionária* (AlphaZero).
+
+Algumas limitações do *AlphaGo* eram:
+- usa *conhecimento específico* do jogo Go:
+  - o tabuleiro do Go é #stress[simétrico], tanto faz qual é a rotação,
+    - o que acelera o treinamento de máquina;
+- usa *aprendizado* #stress[supervisionado].
+
+Os criadores do *AlphaZero* fazem #stress[aproximações sucessivas]:
+- o treinamento *não pode* (e não precisa de) depender de simetrias ou otimizações;
+- utiliza apenas *aprendizado* #stress[por reforço]
+  - simula @partida:pl por meio de @selfplay, o que
+    - cria uma massa de dados para ajustar os @peso:pl e @vies:pl.
 
 = Objetos e fenômenos
 
@@ -72,16 +88,13 @@ Os autores utilizam o significante #stress[@jogo] como:
 
 Isso destaca a #stress[abstração] realizada, ao considerar apenas os aspectos do @jogo que interessam à *modelagem computacional* de seus componentes e que possibilitam analisar a #stress[complexidade] de dinâmicas emergentes durante as @partida:pl.
 
-= Soberania
-#note_from_gabriel(note: todo_note)[
-  Dado que é possível representar um jogo completamente sobre a perspectiva computacional, pode-se dizer que a ciência da computação é #stress[soberana] em seus próprios modos?
-]
-
-não interessam os aspectos psicológicos por traz do aprendizado do modelo.
-
 = Conjuntos e sistemas
 
 componentes de um jogo
+
+= Reducionismo
+
+Reduz as partidas a um conjunto de turnos; usa apenas tuplas (turno, resultado) para treinar o modelo
 
 = Experimento
 

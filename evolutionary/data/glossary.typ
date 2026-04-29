@@ -56,6 +56,22 @@
     group: "Computação",
   ),
   (
+    key: "peso",
+    short: [peso],
+    plural: [pesos],
+    custom: foreign_text[weight],
+    description: [Em inglês, #foreign_text[weight]. Parâmetro ajustável que pondera a conexão entre neurônios em uma @rn, determinando a força da influência de uma entrada sobre a saída de uma unidade @li:2022:survey_convolutional_neural_networks.],
+    group: "Computação",
+  ),
+  (
+    key: "vies",
+    short: [viés],
+    plural: [vieses],
+    custom: foreign_text[bias],
+    description: [Em inglês, #foreign_text[bias]. Parâmetro aditivo em um neurônio de @rn que ajusta o limiar de ativação, permitindo que o modelo se adapte melhor aos dados @li:2022:survey_convolutional_neural_networks.],
+    group: "Computação",
+  ),
+  (
     key: "selfplay",
     short: foreign_text[self-play],
     custom: [autoaprendizado por simulação de partidas],
