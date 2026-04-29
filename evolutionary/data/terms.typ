@@ -21,6 +21,11 @@
     key: "web",
     short: foreign_text[web],
   ),
+  (
+    key: "frame",
+    short: foreign_text[frame],
+    plural: foreign_text[frames],
+  ),
 )
 
 #let get_term = (

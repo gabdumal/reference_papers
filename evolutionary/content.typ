@@ -1,6 +1,6 @@
 #import "components.typ": cite_prose, note_from_gabriel, stress, todo_note
 #import "packages.typ": glossarium
-#import "util.typ": foreign_text
+#import "util.typ": foreign_text, get_term
 
 = Paradigma
 
@@ -86,9 +86,30 @@ Sobre @jogo:pl, destacam-se como *fenômenos* as #stress[#glossarium.gls-plural(
   - o *decorrer* de uma @partida que um @jogador profissional faria.
 
 
-= Conjuntos e sistemas
+= Domínio
+
+#stress[Nem todos] os @jogo:pl são computacionalmente *equiparáveis*!
+Existem os:
+- #glossarium.gls("jogo_turno", plural: true, display: stress(glossarium.gls-plural("jogo_turno"))), em que o *tempo* passa de forma *discreta*, por meio de @turno:pl;
+- #stress[jogos de tempo contínuo], em que o tempo passa como no *mundo real*
+  - quando representados computacionalmente, o decorrer do @jogo é feito por meio de *#get_term("frame", plural: true)* de simulação e renderização.
+
+O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno:pl*.
+- Cada *jogada* é representada como um @turno,
+- que é representado como um *nó* de uma *árvore* de busca.
+- Cada *@movimento* leva a um novo *@estado*.
+
+Seria #stress[impossível] utilizar os os métodos de @mcts e AlphaZero para esses @jogo:pl.
+
+
+= Conjuntos
 
 componentes de um jogo
+
+
+= Situação de contorno
+
+Jogos de dois jogadores; jogos de tabuleiro; Go, Xadrez e Shogi
 
 
 = Abstração
@@ -114,11 +135,3 @@ Reduz as partidas a um conjunto de turnos; usa apenas tuplas (turno, resultado) 
 = Experimento
 
 = Reprodutibilidade
-
-= Domínio
-
-Jogos de turnos
-
-= Situação de contorno
-
-Jogos de dois jogadores; jogos de tabuleiro; Go, Xadrez e Shogi
