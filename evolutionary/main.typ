@@ -1,11 +1,11 @@
-#import "packages.typ": glossarium, touying
+#import "packages.typ": glossarium, quati-abnt, touying
 
 #import "components.typ": title_page
 
 #import "data/data.typ" as data
 #import "data/glossary.typ": glossaries_entries
 
-#import "style.typ": font_family, font_size, neutral_color, theme_color
+#import "style/style.typ": font_family, font_size, neutral_color, theme_color
 
 // ## Layout configuration. Configuração de leiaute.
 
@@ -24,13 +24,30 @@
 
 #show link: set text(fill: theme_color)
 
+
 // ## Glossary. Glossário.
 #show: glossarium.make-glossary
 #glossarium.register-glossary(glossaries_entries)
 
+// ### Bibliography. Referências.
+// NBR 6023:2025 6, NBR 14724:2024 4.2.3.1
+#set bibliography(
+  style: "./style/bibliography_style.csl",
+  title: none,
+)
+#show bibliography: body => {
+  set par(
+    leading: font_size * 0.5,
+    spacing: font_size,
+  )
+  set block(
+    breakable: false,
+  )
+  body
+}
+
 
 // ## Template. Modelo.
-
 #show: touying.themes.metropolis.metropolis-theme.with(
   aspect-ratio: "16-9",
   header-right: image(
@@ -42,10 +59,10 @@
     primary-light: rgb("#BEBEBE"),
     secondary: rgb("#565656"),
     neutral-lightest: neutral_color,
-    neutral-dark: rgb("#565656"),
-    neutral-darkest: rgb("#565656"),
+    neutral-darkest: rgb("#000"),
   ),
 )
+
 
 // ## Pages. Páginas.
 
@@ -54,6 +71,12 @@
 #include "content.typ"
 
 
-// ## Bibliography. Bibliografia.
-#show bibliography: none
-#bibliography(title: none, style: "chicago-notes", "./data/bibliography.bib")
+// ## Glossary. Glossário.
+= Glossário
+#glossarium.print-glossary(
+  disable-back-references: true,
+  glossaries_entries,
+)
+
+= Referências
+#bibliography("data/bibliography.bib")

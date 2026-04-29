@@ -3,14 +3,14 @@
 #import "./data/data.typ" as data
 
 #import "./packages.typ": (
-  quati-abnt.common.components.closed_discussion_note, quati-abnt.common.components.create_status_note,
-  quati-abnt.common.components.done_note, quati-abnt.common.components.editor_note,
-  quati-abnt.common.components.open_discussion_note, quati-abnt.common.components.progress_note,
-  quati-abnt.common.components.todo_note, touying, touying.themes.metropolis.empty-slide,
-  touying.themes.metropolis.focus-slide, touying.themes.metropolis.slide,
+  quati-abnt.common.components.cite_prose, quati-abnt.common.components.closed_discussion_note,
+  quati-abnt.common.components.create_status_note, quati-abnt.common.components.done_note,
+  quati-abnt.common.components.editor_note, quati-abnt.common.components.open_discussion_note,
+  quati-abnt.common.components.progress_note, quati-abnt.common.components.todo_note, touying,
+  touying.themes.metropolis.empty-slide, touying.themes.metropolis.focus-slide, touying.themes.metropolis.slide,
 )
 
-#import "./style.typ": font_size, neutral_color, theme_color
+#import "style/style.typ": font_size, neutral_color, theme_color
 
 
 #let print_person(
@@ -90,10 +90,15 @@
       }
     ],
 
-    box(
+    stack(
+      spacing: font_size,
       image(
         height: 4cm,
         "./assets/images/brasao_ufjf.png",
+      ),
+      image(
+        height: 4cm,
+        "./assets/images/logomarca_ppgcc.png",
       ),
     ),
   )
