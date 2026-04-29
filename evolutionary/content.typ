@@ -67,10 +67,28 @@ Os criadores do *AlphaZero* fazem #stress[aproximações sucessivas]:
   - simula @partida:pl por meio de @selfplay, o que
     - cria uma massa de dados para ajustar os @peso:pl e @vies:pl.
 
+
 = Objetos e fenômenos
 
-jogos
-agentes inteligentes
+O artigo trata sobretudo de #stress[#glossarium.gls-plural("jogo")], que são tidos como os
+- *objetos fundamentais* para se aplicar qualquer técnica de
+  - busca de *soluções* para @partida:pl.
+
+Já os #stress[#glossarium.gls-plural("agint")] são tidos como os
+- *objetos resultantes* da tecnologia desenvolvida.
+- Sobre eles, são realizados experimentos, e se coleta
+  - dados analíticos sobre o *desempenho* de solução.
+
+Sobre @jogo:pl, destacam-se como *fenômenos* as #stress[#glossarium.gls-plural("partida")].
+- São por meio delas que um @jogo parte do *@estado inicial*
+  - e chega ao *final* com vitória, derrota ou empate.
+- Os @agint:pl visam a *reproduzir*
+  - o *decorrer* de uma @partida que um @jogador profissional faria.
+
+
+= Conjuntos e sistemas
+
+componentes de um jogo
 
 
 = Abstração
@@ -88,9 +106,6 @@ Os autores utilizam o significante #stress[@jogo] como:
 
 Isso destaca a #stress[abstração] realizada, ao considerar apenas os aspectos do @jogo que interessam à *modelagem computacional* de seus componentes e que possibilitam analisar a #stress[complexidade] de dinâmicas emergentes durante as @partida:pl.
 
-= Conjuntos e sistemas
-
-componentes de um jogo
 
 = Reducionismo
 
