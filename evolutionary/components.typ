@@ -13,6 +13,9 @@
 #import "style/style.typ": font_size, neutral_lightest_color, theme_color
 
 
+#let stress = it => strong(text(fill: theme_color, it))
+
+
 #let print_person(
   person: (
     first_name: "Fulano",
@@ -79,8 +82,8 @@
         set text(font_size - 1pt)
         data.institution + linebreak()
         data.organization + linebreak()
-        text(
-          weight: "bold",
+
+        stress(
           datetime(
             day: 07,
             month: 05,

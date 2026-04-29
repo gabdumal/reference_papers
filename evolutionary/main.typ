@@ -5,60 +5,18 @@
 #import "data/data.typ" as data
 #import "data/glossary.typ": glossaries_entries
 
-#import "style/style.typ": (
-  font_family, font_size, neutral_darker_color, neutral_darkest_color, neutral_lightest_color, theme_color,
-)
+#import "style/style.typ": font_size, neutral_darkest_color, neutral_lightest_color, theme_color
 
-// ## Layout configuration. Configuração de leiaute.
+#import "template.typ": template
 
-#set text(
-  lang: "pt",
-  region: "br",
-  hyphenate: true,
-  weight: "regular",
-  font: font_family,
-)
-
-#set grid(
-  align: (left, right),
-  gutter: font_size,
-)
-
-#show link: it => {
-  if type(it.dest) == label {
-    text(fill: neutral_darker_color, it)
-  } else {
-    text(fill: theme_color, it)
-  }
-}
-
-#show ref: it => {
-  text(fill: neutral_darker_color, it)
-}
 
 // ## Glossary. Glossário.
 #show: glossarium.make-glossary
 #glossarium.register-glossary(glossaries_entries)
 
-// ### Bibliography. Referências.
-// NBR 6023:2025 6, NBR 14724:2024 4.2.3.1
-#set bibliography(
-  style: "./style/bibliography_style.csl",
-  title: none,
-)
-#show bibliography: body => {
-  set par(
-    leading: font_size * 0.5,
-    spacing: font_size,
-  )
-  set block(
-    breakable: false,
-  )
-  body
-}
-
 
 // ## Template. Modelo.
+#show: template
 #show: touying.themes.metropolis.metropolis-theme.with(
   aspect-ratio: "16-9",
   header-right: image(
@@ -71,6 +29,9 @@
     secondary: rgb("#565656"),
     neutral-lightest: neutral_lightest_color,
     neutral-darkest: neutral_darkest_color,
+  ),
+  touying.config-common(
+    show-strong-with-alert: false,
   ),
 )
 
@@ -90,6 +51,7 @@
     glossaries_entries,
   )
 ]
+
 
 // ## Bibliography. Bibliografia.
 = Referências
