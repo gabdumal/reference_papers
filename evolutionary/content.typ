@@ -86,6 +86,19 @@ Sobre @jogo:pl, destacam-se como *fenômenos* as #stress[#glossarium.gls-plural(
   - o *decorrer* de uma @partida que um @jogador profissional faria.
 
 
+= Conjuntos
+
+Um @jogo_turno requer que sejam determinados *conjuntos* de #stress[componentes].
+- Uma #glossarium.gls("partida", display: stress(glossarium.gls-short("partida"))) é um conjunto de *@rodada:pl*, partindo da inicial até um @estado terminal.
+- Uma #glossarium.gls("rodada", display: stress(glossarium.gls-short("rodada"))) é um conjunto de *@turno:pl* alternados entre *@jogador:pl*.
+- Um #glossarium.gls("estado", display: stress(glossarium.gls-short("estado"))) representa o conjunto de *@casa:pl* do tabuleiro de forma organizada.
+
+O AlphaZero também requer que sejam determinados de antemão:
+- o *conjunto* de todos os #glossarium.gls("movimento", plural: true, display: stress(glossarium.gls-plural("movimento"))) que podem ser tomados em qualquer @estado;
+- o *conjunto* de todos os #stress[valores] que uma *@casa* pode assumir (vazio e as peças).
+- o *conjunto* de todos os #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador"))) que participarão de dada @partida.
+
+
 = Domínio
 
 #stress[Nem todos] os @jogo:pl são computacionalmente *equiparáveis*!
@@ -100,11 +113,6 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 - Cada *@movimento* leva a um novo *@estado*.
 
 Seria #stress[impossível] utilizar os os métodos de @mcts e AlphaZero para esses @jogo:pl.
-
-
-= Conjuntos
-
-componentes de um jogo
 
 
 = Situação de contorno
