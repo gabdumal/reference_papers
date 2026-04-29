@@ -106,3 +106,20 @@
     ),
   )
 ]
+
+#let note_from_gabriel = (
+  note: editor_note,
+  it,
+) => {
+  let color = oklch(80.43%, 0.1, 278.25deg)
+  note(
+    prefixes: (
+      (
+        body: "Gabriel",
+        fill: color,
+        stroke: color.saturate(25%),
+      ),
+    ),
+    it,
+  )
+}

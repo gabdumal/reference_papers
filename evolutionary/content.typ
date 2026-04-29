@@ -1,4 +1,4 @@
-#import "components.typ": cite_prose, stress
+#import "components.typ": cite_prose, note_from_gabriel, stress, todo_note
 #import "packages.typ": glossarium
 #import "util.typ": foreign_text
 
@@ -51,6 +51,12 @@ Para comprová-la, os autores:
 - comparam o desempenho de seus @agint:pl a demais algoritmos de *referência* que auto-jogam os respectivos jogos.
 
 
+= Objetos e fenômenos
+
+jogos
+agentes inteligentes
+
+
 = Abstração
 
 No contexto do artigo discutido, um #stress[@jogo] é tido como um objeto de características limitadas.
@@ -65,3 +71,26 @@ Os autores utilizam o significante #stress[@jogo] como:
   ].
 
 Isso destaca a #stress[abstração] realizada, ao considerar apenas os aspectos do @jogo que interessam à *modelagem computacional* de seus componentes e que possibilitam analisar a #stress[complexidade] de dinâmicas emergentes durante as @partida:pl.
+
+= Soberania
+#note_from_gabriel(note: todo_note)[
+  Dado que é possível representar um jogo completamente sobre a perspectiva computacional, pode-se dizer que a ciência da computação é #stress[soberana] em seus próprios modos?
+]
+
+não interessam os aspectos psicológicos por traz do aprendizado do modelo.
+
+= Conjuntos e sistemas
+
+componentes de um jogo
+
+= Experimento
+
+= Reprodutibilidade
+
+= Domínio
+
+Jogos de turnos
+
+= Situação de contorno
+
+Jogos de dois jogadores; jogos de tabuleiro; Go, Xadrez e Shogi
