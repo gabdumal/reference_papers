@@ -4,18 +4,38 @@
 
 #let abbreviations_entries = (
   (
-    key: "abnt",
-    short: "ABNT",
-    long: "Associação Brasileira de Normas Técnicas",
-    group: "Normatização",
+    key: "ia",
+    short: "IA",
+    plural: "IAs",
+    long: "inteligência artificial",
+    longplural: "inteligências artificiais",
+    description: [Campo da computação dedicado a criar sistemas capazes de perceber, aprender e agir de forma autônoma, inspirados pela inteligência humana @geeksforgeeks:2025:what_is_ai.],
+    group: "Computação",
   ),
   (
-    key: "nbr",
-    short: "NBR",
-    plural: "NBRs",
-    long: "Norma Brasileira",
-    longplural: "Normas Brasileiras",
-    group: "Normatização",
+    key: "resnet",
+    short: "ResNet",
+    plural: "ResNets",
+    long: "rede neural residual",
+    longplural: "redes neurais residuais",
+    description: [Em inglês, #foreign_text[residual neural network]. Arquitetura de rede neural profunda com conexões de atalho para facilitar o treinamento de camadas muito profundas @he:2015:deep_residual_learning.],
+    group: "Computação",
+  ),
+  (
+    key: "cnn",
+    short: "CNN",
+    plural: "CNNs",
+    long: "rede neural convolucional",
+    longplural: "redes neurais convolucionais",
+    description: [Em inglês, #foreign_text[convolutional neural network]. Arquitetura de rede neural especializada em processar dados com estrutura de grade, como imagens, usando camadas convolucionais para extrair características @li:2022:survey_convolutional_neural_networks.],
+    group: "Computação",
+  ),
+  (
+    key: "mcts",
+    short: "MCTS",
+    long: "busca em árvore de Monte Carlo",
+    description: [Em inglês, #foreign_text[Monte Carlo tree search]. Algoritmo de busca por simulação usado para explorar espaços de decisão em jogos @swiechowski:2022:monte_carlo_tree_search.],
+    group: "Computação",
   ),
 )
 
@@ -24,20 +44,22 @@
     key: "agint",
     short: "agente inteligente",
     plural: "agentes inteligentes",
-    description: [Sistema capaz de interpretar um estado, tomar decisões autônomas e agir para atingir objetivos definidos, aprendendo a adaptar seu comportamento @holmgard:2019:automated_playtesting_procedural_personas
-      #footnote[
-        #cite(form: "full", <holmgard:2019:automated_playtesting_procedural_personas>)
-      ].],
+    description: [Sistema capaz de interpretar um estado, tomar decisões autônomas e agir para atingir objetivos definidos, aprendendo a adaptar seu comportamento @holmgard:2019:automated_playtesting_procedural_personas.],
+    group: "Computação",
+  ),
+  (
+    key: "rn",
+    short: "rede neural",
+    plural: "redes neurais",
+    custom: foreign_text[neural network],
+    description: [Em inglês, #foreign_text[neural network]. Modelo computacional composto por camadas de unidades interligadas que aprendem padrões em dados por meio de ajustes de pesos @li:2022:survey_convolutional_neural_networks.],
     group: "Computação",
   ),
   (
     key: "selfplay",
     short: foreign_text[self-play],
     custom: [autoaprendizado por simulação de partidas],
-    description: [Em português, autoaprendizado por simulação de partidas. Técnica em que um @agint treina jogando contra versões de si mesmo para aprender estratégias por reforço sem dados externos @silver:2017:mastering_chess_shogi
-      #footnote[
-        #cite(form: "full", <silver:2017:mastering_chess_shogi>)
-      ].],
+    description: [Em português, autoaprendizado por simulação de partidas. Técnica em que um @agint treina jogando contra versões de si mesmo para aprender estratégias por reforço sem dados externos @silver:2017:mastering_chess_shogi.],
     group: "Computação",
   ),
   (
@@ -45,10 +67,7 @@
     short: "jogo",
     plural: "jogos",
     custom: foreign_text[game],
-    description: [Em inglês, #foreign_text[game]. Sistema de regras que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou encerramento @suits:1967:what_is_a_game
-      #footnote[
-        #cite(form: "full", <suits:1967:what_is_a_game>)
-      ].],
+    description: [Em inglês, #foreign_text[game]. Sistema de regras que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou encerramento @suits:1967:what_is_a_game.],
     group: "Jogos",
   ),
   (

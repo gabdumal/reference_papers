@@ -1,11 +1,13 @@
 #import "packages.typ": glossarium, quati-abnt, touying
 
-#import "components.typ": title_page
+#import "components.typ": slide, title_page
 
 #import "data/data.typ" as data
 #import "data/glossary.typ": glossaries_entries
 
-#import "style/style.typ": font_family, font_size, neutral_color, theme_color
+#import "style/style.typ": (
+  font_family, font_size, neutral_darker_color, neutral_darkest_color, neutral_lightest_color, theme_color,
+)
 
 // ## Layout configuration. Configuração de leiaute.
 
@@ -22,8 +24,17 @@
   gutter: font_size,
 )
 
-#show link: set text(fill: theme_color)
+#show link: it => {
+  if type(it.dest) == label {
+    text(fill: neutral_darker_color, it)
+  } else {
+    text(fill: theme_color, it)
+  }
+}
 
+#show ref: it => {
+  text(fill: neutral_darker_color, it)
+}
 
 // ## Glossary. Glossário.
 #show: glossarium.make-glossary
@@ -58,8 +69,8 @@
     primary: theme_color,
     primary-light: rgb("#BEBEBE"),
     secondary: rgb("#565656"),
-    neutral-lightest: neutral_color,
-    neutral-darkest: rgb("#000"),
+    neutral-lightest: neutral_lightest_color,
+    neutral-darkest: neutral_darkest_color,
   ),
 )
 
@@ -73,10 +84,15 @@
 
 // ## Glossary. Glossário.
 = Glossário
-#glossarium.print-glossary(
-  disable-back-references: true,
-  glossaries_entries,
-)
+#slide(title: "Glossário")[
+  #glossarium.print-glossary(
+    disable-back-references: true,
+    glossaries_entries,
+  )
+]
 
+// ## Bibliography. Bibliografia.
 = Referências
-#bibliography("data/bibliography.bib")
+#slide(title: "Referências")[
+  #bibliography("data/bibliography.bib")
+]

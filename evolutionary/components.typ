@@ -10,7 +10,7 @@
   touying.themes.metropolis.empty-slide, touying.themes.metropolis.focus-slide, touying.themes.metropolis.slide,
 )
 
-#import "style/style.typ": font_size, neutral_color, theme_color
+#import "style/style.typ": font_size, neutral_lightest_color, theme_color
 
 
 #let print_person(
@@ -49,7 +49,7 @@
 }
 
 #let title_page = () => empty-slide(
-  config: (touying.config-page(fill: neutral_color)),
+  config: (touying.config-page(fill: neutral_lightest_color)),
 )[
   #grid(
     columns: (auto, auto),
