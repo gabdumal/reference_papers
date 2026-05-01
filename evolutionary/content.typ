@@ -94,18 +94,24 @@ Um @jogo_turno requer que sejam determinados *conjuntos* de #stress[componentes]
 - Um #glossarium.gls("estado", display: stress(glossarium.gls-short("estado"))) representa o conjunto de *@casa:pl* do tabuleiro de forma organizada.
 
 O AlphaZero também requer que sejam determinados de antemão:
+- o *conjunto* de todas as #glossarium.gls("casa", plural: true, display: stress(glossarium.gls-plural("casa"))) do tabuleiro e os valores que podem assumir.
 - o *conjunto* de todos os #glossarium.gls("movimento", plural: true, display: stress(glossarium.gls-plural("movimento"))) que podem ser tomados em qualquer @estado;
-- o *conjunto* de todos os #stress[valores] que uma *@casa* pode assumir (vazio e as peças).
 - o *conjunto* de todos os #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador"))) que participarão de dada @partida.
 
 
 = Sistemas
 
-O significante #stress[@jogo] é definido como: #stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou *encerramento* @suits:1967:what_is_a_game#footnote[
+O significante #stress[@jogo] é definido como: "#stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou *encerramento*" @suits:1967:what_is_a_game#footnote[
   #cite(form: "full", <suits:1967:what_is_a_game>)
 ].
 
-Computacionalmente, um @jogo pode ser representado como uma classe
+Computacionalmente, um @jogo pode ser representado como uma *classe* que recebe como atributos os #stress[conjuntos] de @casa:pl, @movimento:pl, e @jogador:pl.
+- Essa classe provê *métodos* para:
+  - #stress[inicializar] a @partida, gerando o @estado inicial;
+  - #stress[executar] um *@movimento*, levando de um @estado a outro; e
+  - #stress[verificar] se a @partida chegou ao *fim*; e
+  - #stress[calcular] a *pontuação* dos @jogador:pl.
+- Assim, ela correlaciona todos os elementos representados.
 
 
 = Domínio
@@ -122,7 +128,7 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 - Cada *@movimento* leva a um novo *@estado*.
 - A informação dos @estado:pl deve ser *completa*, visível a todos os @jogador:pl.
 
-Seria #stress[impossível] utilizar os os métodos de @mcts e AlphaZero para esses @jogo:pl.
+É #stress[impossível] utilizar os métodos de busca em árvore em @jogo:pl contínuos.
 
 
 = Situação de contorno
