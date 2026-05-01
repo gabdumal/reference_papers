@@ -133,7 +133,17 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 
 = Situação de contorno
 
-Jogos de dois jogadores; jogos de tabuleiro; Go, Xadrez e Shogi
+Os autores determinaram alguns fatores de *limitação* do #stress[escopo] do trabalho.
+
+Apenas é possível *aplicar* a técnica desenvolvida para #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(glossarium.gls-plural("jogo_tabuleiro"))).
+- A modelagem dos *@estado:pl* requer que eles sejam
+  - formados por uma #stress[matriz de #glossarium.gls("casa", plural: true, display: stress(glossarium.gls-plural("casa")))], como uma *imagem*,
+  - domínio em que as @cnn:pl operam.
+
+A técnica também abordou apenas @partida:pl entre #stress[dois #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador")))].
+- O método de *@mcts* alterna os níveis da *árvore de busca* entre cada @jogador.
+
+Apesar de a técnica almejar ser #stress[genérica], dadas as situações de contorno, os autores fizeram experimentações *apenas com os jogos* Go, Xadrez e Shogi.
 
 
 = Abstração
@@ -144,12 +154,10 @@ No contexto do artigo discutido, um #stress[@jogo] é tido como um objeto de car
 - desenho artístico e desenvolvimento de tema; ou
 - material físico e manipulação de objetos no mundo real.
 
-Os autores utilizam o significante #stress[@jogo] como:
-- #stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou #stress[encerramento] @suits:1967:what_is_a_game#footnote[
-    #cite(form: "full", <suits:1967:what_is_a_game>)
-  ].
-
-Isso destaca a #stress[abstração] realizada, ao considerar apenas os aspectos do @jogo que interessam à *modelagem computacional* de seus componentes e que possibilitam analisar a #stress[complexidade] de dinâmicas emergentes durante as @partida:pl.
+Isso destaca a #stress[abstração] realizada, ao considerar apenas
+- os aspectos do @jogo que interessam à *modelagem computacional* e que
+- possibilitam analisar a #stress[complexidade] de
+  - *dinâmicas* (ou estratégias) emergentes durante as @partida:pl.
 
 
 = Reducionismo
