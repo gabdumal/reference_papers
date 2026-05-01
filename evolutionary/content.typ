@@ -162,7 +162,15 @@ Isso destaca a #stress[abstração] realizada, ao considerar apenas
 
 = Reducionismo
 
-Reduz as partidas a um conjunto de turnos; usa apenas tuplas (turno, resultado) para treinar o modelo
+Durante o processo de #glossarium.gls("selfplay", display: stress(glossarium.gls-short("selfplay"))), uma série de @partida:pl são *simuladas* por @agint:pl em níveis progressivos de treinamento.
+- Ao chegar ao @estado de fim de @jogo, a *@pontuacao* é registrada.
+
+O algoritmo #stress[reduz] cada *@turno* a:
+- o @estado do tabuleiro prévio;
+- o @movimento jogado; e
+- a @pontuacao do respectivo @jogador.
+
+Essa estrutura é usada para #stress[ajustar] os *@peso:pl e @vies:pl* do modelo parcial durante o treinamento em aprendizado por reforço.
 
 
 = Experimento
