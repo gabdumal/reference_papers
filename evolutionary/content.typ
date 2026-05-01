@@ -190,3 +190,16 @@ Aferiu-se *vantagem significativa* do AlphaZero na quantidade de vitórias.
 
 
 = Reprodutibilidade
+
+Os autores buscaram garantir a #stress[reprodutibilidade] da seguinte forma.
+- Descreveram a *arquitetura da @cnn* utilizada.
+- Explicaram o processo de busca da *@mcts adaptada* e sua saída.
+- Determinaram a função de *avaliação da @pontuacao* final das @partida:pl.
+- Disponibilizaram o *pseudo-código* do algoritmo de @selfplay e de treinamento.
+- Listaram os *hiper-parâmetros*.
+- Descreveram os *recursos* computacionais.
+- Apresentaram o *passo-a-passo* das @partida:pl executadas do experimento.
+
+Contudo, alguns pontos poderiam ser #stress[melhorados], como a seguir.
+- Disponibilizar o *código completo* da representação das regras dos @jogo:pl, do ambiente de execução do experimento, e da construção da estrutura da @cnn.
+- Para os modelos utilizados no experimento, fornecer o *código e os @peso:pl*.
