@@ -175,5 +175,18 @@ Essa estrutura é usada para #stress[ajustar] os *@peso:pl e @vies:pl* do modelo
 
 = Experimento
 
+Os autores utilizaram a técnica *AlphaZero* para #stress[gerar e treinar] independentemente três @agint:pl.
+
+Compararam seus #stress[desempenhos] em @partida:pl contra outros *algoritmos* de referência, considerando uma grande quantidade de execuções.
+- Xadrez: comparação com o Stockfish.
+- Shogi: comparação com o Elmo.
+- Go: comparação com o AlphaGo (artigo revolucionário).
+
+A natureza aleatória do AlphaZero levou a uma diversidade de dinâmicas observadas.
+
+Aferiu-se *vantagem significativa* do AlphaZero na quantidade de vitórias.
+- A quantidade de buscas em árvore foi bastante inferior àquela dos concorrentes.
+- Foram identificadas estratégias de abertura de @partida:pl similares àquelas desenvolvidas por humanos.
+
 
 = Reprodutibilidade
