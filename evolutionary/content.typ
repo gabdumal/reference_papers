@@ -19,16 +19,16 @@ Esse desenvolvimento surge dentro da transição entre #stress[paradigmas], cuja
   #cite(form: "full", <silver:2016:mastering_game_go>)
 ].
 
-Ambos os artigos fazem parte de uma #stress[pesquisa contínua] realizada pelo laboratório de pesquisa em *@ia* #foreign_text[Google DeepMind].
+Ambos os artigos fazem parte de uma #stress[pesquisa contínua] realizada pelo laboratório de *@ia* #foreign_text[Google DeepMind].
 
 O #stress[paradigma] dado pelo artigo *revolucionário* (AlphaGo)
 indica que:
 - é possível usar @rn:pl para
 - gerar *@agint:pl* que
 - joguem #stress[Go] (e nenhum outro jogo) melhor que
-  - @jogador:pl profissionais e quaisquer algoritmos no estado-da-arte.
+  - @jogador:pl profissionais e algoritmos no estado-da-arte.
 
-A técnica usa dois passos de *treinamento*:
+A técnica revolucionária usava dois passos de *treinamento*:
 - aprendizado #stress[supervisionado] com base em históricos de @partida:pl de profissionais;
 - aprendizado por #stress[reforço] com base em @selfplay, em que
   - a função de gratificação usa o *paradigma clássico* de
@@ -37,7 +37,7 @@ A técnica usa dois passos de *treinamento*:
 
 = Hipótese
 
-Os autores acreditam que é possível consolidar o paradigma em crise.
+Os autores acreditam que é possível *consolidar* o paradigma em #stress[crise].
 
 Nesse cenário, eles declaram como hipótese que:
 - é possível gerar *@agint:pl* #stress[genéricos] que
@@ -48,7 +48,8 @@ Nesse cenário, eles declaram como hipótese que:
 Para comprová-la, os autores:
 - desenvolvem a tecnologia #stress[AlphaZero],
 - aplicam-na aos jogos Go, Xadrez e Shogi, e
-- comparam o desempenho de seus @agint:pl a demais algoritmos de *referência* que auto-jogam os respectivos jogos.
+- comparam o desempenho de seus @agint:pl a
+  - demais algoritmos de @jogador:pl artificiais de *referência*.
 
 
 = Aproximações sucessivas
@@ -57,11 +58,11 @@ Como ferramenta para validar a hipótese, os autores partem da tecnologia *anter
 
 Algumas limitações do *AlphaGo* eram:
 - usa *conhecimento específico* do jogo Go:
-  - o tabuleiro do Go é #stress[simétrico], tanto faz qual é a rotação,
+  - seu tabuleiro é #stress[simétrico] --- jogadas são equivalentes em qualquer rotação ---,
     - o que acelera o treinamento de máquina;
 - usa *aprendizado* #stress[supervisionado].
 
-Os criadores do *AlphaZero* fazem #stress[aproximações sucessivas]:
+Os autores agora fazem #stress[aproximações sucessivas]. No AlphaZero,
 - o treinamento *não pode* (e não precisa de) depender de simetrias ou otimizações;
 - utiliza apenas *aprendizado* #stress[por reforço]
   - simula @partida:pl por meio de @selfplay, o que
@@ -111,20 +112,21 @@ Computacionalmente, um @jogo pode ser representado como uma *classe* que recebe 
   - #stress[executar] um *@movimento*, levando de um @estado a outro; e
   - #stress[verificar] se a @partida chegou ao *fim*; e
   - #stress[calcular] a *pontuação* dos @jogador:pl.
-- Assim, ela correlaciona todos os elementos representados.
+
+O @jogo é o sistema que *correlaciona* todos os elementos representados.
 
 
 = Domínio
 
 #stress[Nem todos] os @jogo:pl são computacionalmente *equiparáveis*!
 Existem os:
-- #glossarium.gls("jogo_turno", plural: true, display: stress(glossarium.gls-plural("jogo_turno"))), em que o *tempo* passa de forma *discreta*, por meio de @turno:pl;
-- #stress[jogos de tempo contínuo], em que o tempo passa como no *mundo real*
-  - quando representados computacionalmente, o decorrer do @jogo é feito por meio de *#get_term("frame", plural: true)* de simulação e renderização.
+- #glossarium.gls("jogo_turno", plural: true, display: stress(glossarium.gls-plural("jogo_turno"))), em que o *tempo* passa de forma *discreta*;
+- #stress[jogos contínuos], em que o tempo passa como no *mundo real*.
+  - Quando representados computacionalmente, o decorrer do @jogo é feito por meio de *#get_term("frame", plural: true)* de simulação e renderização.
 
 O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno:pl*.
 - Cada *jogada* é representada como um @turno,
-- que é representado como um *nó* de uma *árvore* de busca.
+- que é salvo como um *nó* de uma *árvore* de busca.
 - Cada *@movimento* leva a um novo *@estado*.
 - A informação dos @estado:pl deve ser *completa*, visível a todos os @jogador:pl.
 
@@ -133,7 +135,8 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 
 = Situação de contorno
 
-Os autores determinaram alguns fatores de *limitação* do #stress[escopo] do trabalho.
+Os autores determinaram alguns fatores de *limitação* do #stress[escopo] da pesquisa.
+Em trabalhos futuros, seria possível expandir a aplicação para além desses pontos.
 
 Apenas é possível *aplicar* a técnica desenvolvida para #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(glossarium.gls-plural("jogo_tabuleiro"))).
 - A modelagem dos *@estado:pl* requer que eles sejam

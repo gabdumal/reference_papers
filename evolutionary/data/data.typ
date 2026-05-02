@@ -22,7 +22,7 @@
 // Autores — obrigatório.
 #let authors = (
   (
-    first_name: [Celso Gabriel],
+    first_name: [Gabriel],
     middle_name: none,
     last_name: [Malosto],
     gender: "masculine",
