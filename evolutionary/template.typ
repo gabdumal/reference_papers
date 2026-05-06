@@ -18,7 +18,7 @@
 
   #show link: it => {
     if type(it.dest) == label {
-      set text(fill: neutral_darker_color)
+      // set text(fill: neutral_darker_color)
       it
     } else {
       set text(fill: theme_color)
@@ -26,10 +26,10 @@
     }
   }
 
-  #show ref: it => {
-    set text(fill: neutral_darker_color)
-    it
-  }
+  // #show ref: it => {
+  //   set text(fill: neutral_darker_color)
+  //   it
+  // }
 
   #set bibliography(
     style: "./style/bibliography_style.csl",

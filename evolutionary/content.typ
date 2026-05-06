@@ -2,7 +2,7 @@
 #import "packages.typ": glossarium
 #import "util.typ": foreign_text, get_term
 
-= Paradigma
+== Paradigma
 
 O artigo em discussão @silver:2018:general_reinforcement_learning_algorithm
 #footnote[
@@ -28,14 +28,14 @@ indica que:
 - joguem #stress[Go] (e nenhum outro jogo) melhor que
   - @jogador:pl profissionais e algoritmos no estado-da-arte.
 
-A técnica revolucionária usava dois passos de *treinamento*:
+O método revolucionário usava dois passos de *treinamento*:
 - aprendizado #stress[supervisionado] com base em históricos de @partida:pl de profissionais;
 - aprendizado por #stress[reforço] com base em @selfplay, em que
   - a função de gratificação usa o *paradigma clássico* de
     - @mcts.
 
 
-= Hipótese
+== Hipótese
 
 Os autores acreditam que é possível *consolidar* o paradigma em #stress[crise].
 
@@ -52,7 +52,7 @@ Para comprová-la, os autores:
   - demais algoritmos de @jogador:pl artificiais de *referência*.
 
 
-= Aproximações sucessivas
+== Aproximações sucessivas
 
 Como ferramenta para validar a hipótese, os autores partem da tecnologia *anterior* (AlphaGo) para a *evolucionária* (AlphaZero).
 
@@ -69,10 +69,10 @@ Os autores agora fazem #stress[aproximações sucessivas]. No AlphaZero,
     - cria uma massa de dados para ajustar os @peso:pl e @vies:pl.
 
 
-= Objetos e fenômenos
+== Objetos e fenômenos
 
 O artigo trata sobretudo de #stress[#glossarium.gls-plural("jogo")], que são tidos como os
-- *objetos fundamentais* para se aplicar qualquer técnica de
+- *objetos fundamentais* para se aplicar qualquer método de
   - busca de *soluções* para @partida:pl.
 
 Já os #stress[#glossarium.gls-plural("agint")] são tidos como os
@@ -87,7 +87,7 @@ Sobre @jogo:pl, destacam-se como *fenômenos* as #stress[#glossarium.gls-plural(
   - o *decorrer* de uma @partida que um @jogador profissional faria.
 
 
-= Conjuntos
+== Conjuntos
 
 Um @jogo_turno requer que sejam determinados *conjuntos* de #stress[componentes].
 - Uma #glossarium.gls("partida", display: stress(glossarium.gls-short("partida"))) é um conjunto de *@rodada:pl*, partindo da inicial até um @estado terminal.
@@ -100,7 +100,7 @@ O AlphaZero também requer que sejam determinados de antemão:
 - o *conjunto* de todos os #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador"))) que participarão de dada @partida.
 
 
-= Sistemas
+== Sistemas
 
 O significante #stress[@jogo] é definido como: "#stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou *encerramento*" @suits:1967:what_is_a_game#footnote[
   #cite(form: "full", <suits:1967:what_is_a_game>)
@@ -116,13 +116,11 @@ Computacionalmente, um @jogo pode ser representado como uma *classe* que recebe 
 O @jogo é o sistema que *correlaciona* todos os elementos representados.
 
 
-= Domínio
+== Domínio
 
 #stress[Nem todos] os @jogo:pl são computacionalmente *equiparáveis*!
-Existem os:
-- #glossarium.gls("jogo_turno", plural: true, display: stress(glossarium.gls-plural("jogo_turno"))), em que o *tempo* passa de forma *discreta*;
-- #stress[jogos contínuos], em que o tempo passa como no *mundo real*.
-  - Quando representados computacionalmente, o decorrer do @jogo é feito por meio de *#get_term("frame", plural: true)* de simulação e renderização.
+- Nos #glossarium.gls("jogo_turno", plural: true, display: stress(glossarium.gls-plural("jogo_turno"))), o tempo passa de forma *discreta*;
+- Nos #stress[jogos contínuos], o tempo passa  em *#get_term("frame", plural: true)* de simulação e renderização.
 
 O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno:pl*.
 - Cada *jogada* é representada como um @turno,
@@ -133,26 +131,27 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 É #stress[impossível] utilizar os métodos de busca em árvore em @jogo:pl contínuos.
 
 
-= Situação de contorno
+== Situação de contorno
 
-Os autores determinaram alguns fatores de *limitação* do #stress[escopo] da pesquisa.
-Em trabalhos futuros, seria possível expandir a aplicação para além desses pontos.
+Existem fatores de *limitação* do #stress[escopo]
+- Poderiam ser superados em trabalhos futuros.
 
-Apenas é possível *aplicar* a técnica desenvolvida para #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(glossarium.gls-plural("jogo_tabuleiro"))).
-- A modelagem dos *@estado:pl* requer que eles sejam
-  - formados por uma #stress[matriz de #glossarium.gls("casa", plural: true, display: stress(glossarium.gls-plural("casa")))], como uma *imagem*,
-  - domínio em que as @cnn:pl operam.
+Apenas é possível *aplicar* o método para #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(glossarium.gls-plural("jogo_tabuleiro"))).
+- A modelagem dos *@estado:pl* requer que sejam
+  - formados por uma #stress[matriz de #glossarium.gls("casa", plural: true, display: stress(glossarium.gls-plural("casa")))], como uma *imagem*, que é
+    - domínio em que as @cnn:pl operam.
 
-A técnica também abordou apenas @partida:pl entre #stress[dois #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador")))].
-- O método de *@mcts* alterna os níveis da *árvore de busca* entre cada @jogador.
+O método abordou apenas @partida:pl entre #stress[dois #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador")))].
+- A *@mcts* alterna os níveis da *árvore de busca* entre cada @jogador.
 
-Apesar de a técnica almejar ser #stress[genérica], dadas as situações de contorno, os autores fizeram experimentações *apenas com os jogos* Go, Xadrez e Shogi.
+#stress[Crítica:] apesar de o método almejar ser #stress[genérico] (dadas as situações de contorno) os autores fizeram experimentações *apenas com os jogos* Go, Xadrez e Shogi.
 
 
-= Abstração
+== Abstração
 
-No contexto do artigo discutido, um #stress[@jogo] é tido como um objeto de características limitadas.
-#stress[Não] são levados em #stress[consideração] aspectos como:
+No contexto do artigo, um #stress[@jogo] é tido como um objeto de características *limitadas*.
+
+#stress[Não] são levados em *consideração* aspectos como:
 - diversão dos @jogador:pl e caráter lúdico;
 - desenho artístico e desenvolvimento de tema; ou
 - material físico e manipulação de objetos no mundo real.
@@ -163,36 +162,39 @@ Isso destaca a #stress[abstração] realizada, ao considerar apenas
   - *dinâmicas* (ou estratégias) emergentes durante as @partida:pl.
 
 
-= Reducionismo
+== Reducionismo
 
 Durante o processo de #glossarium.gls("selfplay", display: stress(glossarium.gls-short("selfplay"))), uma série de @partida:pl são *simuladas* por @agint:pl em níveis progressivos de treinamento.
 - Ao chegar ao @estado de fim de @jogo, a *@pontuacao* é registrada.
 
 O algoritmo #stress[reduz] cada *@turno* a:
-- o @estado do tabuleiro prévio;
-- o @movimento jogado; e
-- a @pontuacao do respectivo @jogador.
+- o *@estado* do tabuleiro prévio;
+- o *@movimento* jogado; e
+- a *@pontuacao* obtida pelo respectivo @jogador.
 
 Essa estrutura é usada para #stress[ajustar] os *@peso:pl e @vies:pl* do modelo parcial durante o treinamento em aprendizado por reforço.
 
 
-= Experimento
+== Experimento
 
-Os autores utilizaram a técnica *AlphaZero* para #stress[gerar e treinar] independentemente três @agint:pl.
+Os autores utilizaram o método *AlphaZero* para #stress[gerar e treinar] @agint:pl.
+- registraram a relação *tempo* de treinamento #sym.times *desempenho*.
 
-Compararam seus #stress[desempenhos] em @partida:pl contra outros *algoritmos* de referência, considerando uma grande quantidade de execuções.
-- Xadrez: comparação com o Stockfish.
-- Shogi: comparação com o Elmo.
-- Go: comparação com o AlphaGo (artigo revolucionário).
+#stress[Executaram] um grande número de *@partida:pl* entre um @agint e o algoritmo de referência.
+- *Xadrez*: comparação com o *Stockfish*.
+- *Shogi*: comparação com o *Elmo*.
+- *Go*: comparação com o *AlphaGo* (artigo revolucionário).
 
-A natureza aleatória do AlphaZero levou a uma diversidade de dinâmicas observadas.
+Os pesquisadores registraram
+- a quantidade de #stress[vitórias], derrotas e empates.
+  - *vantagem significativa* do AlphaZero;
+- quantidade de #stress[buscas] em árvore
+  - *bastante inferior* no AlphaZero;
+- #stress[estratégias] de abertura de @partida:pl
+  - AlphaZero se comporta *similarmente* a humanos.
 
-Aferiu-se *vantagem significativa* do AlphaZero na quantidade de vitórias.
-- A quantidade de buscas em árvore foi bastante inferior àquela dos concorrentes.
-- Foram identificadas estratégias de abertura de @partida:pl similares àquelas desenvolvidas por humanos.
 
-
-= Reprodutibilidade
+== Reprodutibilidade
 
 Os autores buscaram garantir a #stress[reprodutibilidade] da seguinte forma.
 - Descreveram a *arquitetura da @cnn* utilizada.
@@ -203,6 +205,16 @@ Os autores buscaram garantir a #stress[reprodutibilidade] da seguinte forma.
 - Descreveram os *recursos* computacionais.
 - Apresentaram o *passo-a-passo* das @partida:pl executadas do experimento.
 
-Contudo, alguns pontos poderiam ser #stress[melhorados], como a seguir.
-- Disponibilizar o *código completo* da representação das regras dos @jogo:pl, do ambiente de execução do experimento, e da construção da estrutura da @cnn.
-- Para os modelos utilizados no experimento, fornecer o *código e os @peso:pl*.
+#colbreak()
+
+#stress[Crítica:] Alguns pontos poderiam ser #stress[melhorados].
+
+- Disponibilizar o *código completo*
+  - da representação das regras dos @jogo:pl,
+  - do ambiente de execução do experimento, e
+  - da construção da estrutura da @cnn.
+
+- Para os modelos utilizados no experimento,
+  - fornecer o *código* e os *@peso:pl* e vieses.
+
+- Fornecer o conjunto de *#foreign_text[seeds]* para controlar a aleatoriedade.

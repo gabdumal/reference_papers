@@ -13,7 +13,12 @@
 #import "style/style.typ": font_size, neutral_lightest_color, theme_color
 
 
-#let stress = it => strong(text(fill: theme_color, it))
+#let stress = it => strong(
+  text(
+    fill: theme_color,
+    it,
+  ),
+)
 
 
 #let print_person(
@@ -52,7 +57,11 @@
 }
 
 #let title_page = () => empty-slide(
-  config: (touying.config-page(fill: neutral_lightest_color)),
+  config: (
+    touying.config-page(
+      fill: neutral_lightest_color,
+    )
+  ),
 )[
   #grid(
     columns: (auto, auto),

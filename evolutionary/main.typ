@@ -44,13 +44,14 @@
 
 
 // ## Glossary. Glossário.
-= Glossário
-#slide(title: "Glossário")[
-  #glossarium.print-glossary(
-    disable-back-references: true,
-    glossaries_entries,
-  )
-]
+// = Glossário
+// #slide(title: "Glossário")[
+#glossarium.print-glossary(
+  disable-back-references: true,
+  glossaries_entries,
+  invisible: true,
+)
+// ]
 
 
 // ## Bibliography. Bibliografia.
