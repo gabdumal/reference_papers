@@ -37,7 +37,7 @@
       - exaustão impossível para o @jogo Go.
   ],
   align(start)[
-    Paradigma #stress[revolucionário]:
+    Paradigma #stress[emergente]:
     - baseia-se em *@agint:pl*
       - jogam Go como profissionais;
       - estruturados em *@rn:pl*;
@@ -46,6 +46,33 @@
     - política de busca *orientada*, e não poda.
   ],
 )
+
+
+== Postulados
+
+- Todo *@jogo* de informação perfeita possui uma função de #stress[valor ótima] $v^*(s)$.
+  - Cada @estado possui uma *qualidade* objetiva.
+  - Existe uma *estratégia* ótima associada a essa função.
+
+- Exploração *exaustiva* de @jogo:pl com muitos @estado:pl possíveis é #stress[inviável].
+  - Espaço de busca pode ser reduzido usando *aproximações*.
+
+- *Comportamento* competente #stress[emerge] do aprendizado.
+  - Não é necessário programar estratégias manualmente.
+
+
+== Consenso
+
+- *@Jogo:pl* são #stress[ambientes] adequados para avaliação de sistemas *inteligentes*.
+  - Modelagem direta e experimentação por simulação.
+
+- #stress[Desempenho] aferido empiricamente.
+  - Coletado por *taxas* de vitória, pontuação, e tempo discorrido.
+
+- Métodos #stress[estatísticos] são adequados para tomada de decisão.
+  - Regularidades relevantes estão presentes nos dados de partidas.
+  - Não é necessário conhecer explicitamente a função ótima.
+    - Basta estimá-la com precisão suficiente.
 
 
 == Hipótese
@@ -58,7 +85,7 @@
   - Deseja-se simular @jogador:pl de Go em tempo viável.
 
 - #stress[Hipótese]:
-  - *Conhecimento* necessário para aprender Go pode ser *extraído* de massa de dados --- não de estratégias prévias.
+  - *Conhecimento* necessário para jogar Go pode ser *extraído* de massa de dados --- não de estratégias prévias.
   - #stress[Simulação] requer métodos de *busca*, mas adaptados por
     - *aprendizado* supervisionado e por reforço.
 
@@ -78,6 +105,7 @@
   - #stress[calcula] a *pontuação* dos @jogador:pl.
 
 - Estratégias #stress[emergem] das *dinâmicas* durante as simulações e o aprendizado.
+  - Não são explicitamente representadas.
   - Desnecessário conhecimento prévio além das regras.
 
 
@@ -141,10 +169,10 @@ O algoritmo #stress[reduz] cada *@turno* salvo a:
 - o *@movimento* jogado; e
 - a *resultado* final da @partida.
 
-Estrutura suficiente para treinar modelos de @ia e realizar análises estatísticas.
-- *Estratégias* #stress[não] são representadas.
-- Uma jogada é melhor que outra se tem *resultado* melhor da função de avaliação.
-- @Jogador sintético apenas avalia e seleciona algoritmicamente.
+#stress[Comportamento] do @jogador sintético:
+- Reduzido a um problema de estimativa e *decisão*.
+- Uma jogada é melhor que outra se tem melhor *resultado* da função de avaliação.
+- Avalia estados; estima consequências; *seleciona* ações.
 
 
 == Experimento
