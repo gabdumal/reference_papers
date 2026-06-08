@@ -177,44 +177,44 @@ O algoritmo #stress[reduz] cada *@turno* salvo a:
 
 == Experimento
 
-Os autores utilizaram o método *AlphaZero* para #stress[gerar e treinar] @agint:pl.
-- registraram a relação *tempo* de treinamento #sym.times *desempenho*.
+Autores #stress[geraram] e treinaram @agint:pl.
+- Simularam *@partida:pl* entre agente e algoritmo de referência,
+  - baseado em métodos clássicos de busca em árvore.
+- Registraram quantidade de #stress[vitórias].
+- Calcularam rankings de *desempenho* (dan ranking).
+- Testaram empiricamente contra profissional *humano*.
 
-#stress[Executaram] um grande número de *@partida:pl* entre um @agint e o algoritmo de referência.
-- *Xadrez*: comparação com o *Stockfish*.
-- *Shogi*: comparação com o *Elmo*.
-- *Go*: comparação com o *AlphaGo* (artigo revolucionário).
-
-Os pesquisadores registraram
-- a quantidade de #stress[vitórias], derrotas e empates.
-  - *vantagem significativa* do AlphaZero;
-- quantidade de #stress[buscas] em árvore
-  - *bastante inferior* no AlphaZero;
-- #stress[estratégias] de abertura de @partida:pl
-  - AlphaZero se comporta *similarmente* a humanos.
+#stress[Resultados]:
+- *Vantagem significativa* dos @agint:pl.
+- Quantidade de #stress[buscas] em árvore
+  - *bastante inferior* a algoritmos comparados.
+- Capaz de vencer profissional *humano* pela primeira vez.
 
 
 == Reprodutibilidade
 
 Os autores buscaram garantir a #stress[reprodutibilidade] da seguinte forma.
-- Descreveram a *arquitetura da @cnn* utilizada.
-- Explicaram o processo de busca da *@mcts adaptada* e sua saída.
-- Determinaram a função de *avaliação da @pontuacao* final das @partida:pl.
-- Disponibilizaram o *pseudo-código* do algoritmo de @selfplay e de treinamento.
-- Listaram os *hiper-parâmetros*.
-- Descreveram os *recursos* computacionais.
-- Apresentaram o *passo-a-passo* das @partida:pl executadas do experimento.
+
+- Descreveram a *arquitetura das @rn:pl* utilizadas.
+- Explicaram o processo de busca da *busca* em árvore *adaptada*.
+- Determinaram a função de *avaliação* das @partida:pl.
+- Descreveram os *recursos* computacionais gastos.
+- Listaram os *hiper-parâmetros* utilizados.
+
 
 #colbreak()
 
 #stress[Crítica:] Alguns pontos poderiam ser #stress[melhorados].
 
-- Disponibilizar o *código completo*
-  - da representação das regras dos @jogo:pl,
-  - do ambiente de execução do experimento, e
-  - da construção da estrutura da @cnn.
+- Disponibilizar o *código*
+  - da representação das regras do Go,
+  - da construção da estrutura das @rn:pl,
+  - do sistema de aprendizado por reforço, e
+  - do ambiente de execução do experimento.
 
-- Para os modelos utilizados no experimento,
+- Para os modelos utilizados no experimento:
   - fornecer o *código* e os *@peso:pl* e vieses.
+  - ou então o código e o conjunto de *#foreign_text[seeds]* para controlar a aleatoriedade.
 
-- Fornecer o conjunto de *#foreign_text[seeds]* para controlar a aleatoriedade.
+- Apresentar o *passo-a-passo* das jogadas
+  - durante as @partida:pl executadas do experimento.
