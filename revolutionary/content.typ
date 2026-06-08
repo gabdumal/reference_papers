@@ -47,85 +47,38 @@
   ],
 )
 
+
 == Hipótese
 
-Os autores acreditam que é possível *consolidar* o paradigma em #stress[crise].
+- Hipótese #stress[não] é explicitamente *definida*.
+  - Introdução discorre sobre problemática e trabalhos relacionados.
 
-Nesse cenário, eles declaram como hipótese que:
-- é possível gerar *@agint:pl* #stress[genéricos] que
-- joguem *quaisquer* @jogo_tabuleiro:pl dentro do escopo estabelecido
-- com desempenho #stress[superior] a algoritmos no estado-da-arte
-- #stress[sem] necessitar de otimizações ou conhecimento #stress[específicos] de cada jogo.
+- Deduz-se da #stress[problemática]:
+  - *Go* é intratável por algoritmos clássicos --- muitos *@movimento:pl* possíveis. // Nenhum conseguiu vencer um humano profissional até então.
+  - Deseja-se simular @jogador:pl de Go em tempo viável.
 
-Para comprová-la, os autores:
-- desenvolvem a tecnologia #stress[AlphaZero],
-- aplicam-na aos jogos Go, Xadrez e Shogi, e
-- comparam o desempenho de seus @agint:pl a
-  - demais algoritmos de @jogador:pl artificiais de *referência*.
+- #stress[Hipótese]:
+  - *Conhecimento* necessário para aprender Go pode ser *extraído* de massa de dados --- não de estratégias prévias.
+  - #stress[Simulação] requer métodos de *busca*, mas adaptados por
+    - *aprendizado* supervisionado e por reforço.
 
-
-== Aproximações sucessivas
-
-Como ferramenta para validar a hipótese, os autores partem da tecnologia *anterior* (AlphaGo) para a *evolucionária* (AlphaZero).
-
-Algumas limitações do *AlphaGo* eram:
-- usa *conhecimento específico* do jogo Go:
-  - seu tabuleiro é #stress[simétrico] --- jogadas são equivalentes em qualquer rotação ---,
-    - o que acelera o treinamento de máquina;
-- usa *aprendizado* #stress[supervisionado].
-
-Os autores agora fazem #stress[aproximações sucessivas]. No AlphaZero,
-- o treinamento *não pode* (e não precisa de) depender de simetrias ou otimizações;
-- utiliza apenas *aprendizado* #stress[por reforço]
-  - simula @partida:pl por meio de @selfplay, o que
-    - cria uma massa de dados para ajustar os @peso:pl e @vies:pl.
-
-
-== Objetos e fenômenos
-
-O artigo trata sobretudo de #stress[#glossarium.gls-plural("jogo")], que são tidos como os
-- *objetos fundamentais* para se aplicar qualquer método de
-  - busca de *soluções* para @partida:pl.
-
-Já os #stress[#glossarium.gls-plural("agint")] são tidos como os
-- *objetos resultantes* da tecnologia desenvolvida.
-- Sobre eles, são realizados experimentos, e se coleta
-  - dados analíticos sobre o *desempenho* de solução.
-
-Sobre @jogo:pl, destacam-se como *fenômenos* as #stress[#glossarium.gls-plural("partida")].
-- São por meio delas que um @jogo parte do *@estado inicial*
-  - e chega ao *final* com vitória, derrota ou empate.
-- Os @agint:pl visam a *reproduzir*
-  - o *decorrer* de uma @partida que um @jogador profissional faria.
-
-
-== Conjuntos
-
-Um @jogo_turno requer que sejam determinados *conjuntos* de #stress[componentes].
-- Uma #glossarium.gls("partida", display: stress(glossarium.gls-short("partida"))) é um conjunto de *@rodada:pl*, partindo da inicial até um @estado terminal.
-- Uma #glossarium.gls("rodada", display: stress(glossarium.gls-short("rodada"))) é um conjunto de *@turno:pl* alternados entre *@jogador:pl*.
-- Um #glossarium.gls("estado", display: stress(glossarium.gls-short("estado"))) representa o conjunto de *@casa:pl* do tabuleiro de forma organizada.
-
-O AlphaZero também requer que sejam determinados de antemão:
-- o *conjunto* de todas as #glossarium.gls("casa", plural: true, display: stress(glossarium.gls-plural("casa"))) do tabuleiro e os valores que podem assumir.
-- o *conjunto* de todos os #glossarium.gls("movimento", plural: true, display: stress(glossarium.gls-plural("movimento"))) que podem ser tomados em qualquer @estado;
-- o *conjunto* de todos os #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador"))) que participarão de dada @partida.
+- Trabalho foca no *desenvolvimento* e teste da *solução* proposta.
 
 
 == Sistemas
 
-O significante #stress[@jogo] é definido como: "#stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou *encerramento*" @suits:1967:what_is_a_game#footnote[
+#stress[@Jogo] é um "#stress[sistema] de *regras* que define objetivos, @jogador:pl, @movimento:pl e condições de vitória ou encerramento" @suits:1967:what_is_a_game#footnote[
   #cite(form: "full", <suits:1967:what_is_a_game>)
 ].
 
-Computacionalmente, um @jogo pode ser representado como uma *classe* que recebe como atributos os #stress[conjuntos] de @casa:pl, @movimento:pl, e @jogador:pl.
-- Essa classe provê *métodos* para:
-  - #stress[inicializar] a @partida, gerando o @estado inicial;
-  - #stress[executar] um *@movimento*, levando de um @estado a outro; e
-  - #stress[verificar] se a @partida chegou ao *fim*; e
-  - #stress[calcular] a *pontuação* dos @jogador:pl.
+- *Correlaciona* elementos representados.
+  - #stress[inicia] uma @partida --- gera o @estado inicial;
+  - #stress[executa] um *@movimento* --- leva de um @estado a outro;
+  - #stress[verifica] se a @partida chegou ao *fim*; e
+  - #stress[calcula] a *pontuação* dos @jogador:pl.
 
-O @jogo é o sistema que *correlaciona* todos os elementos representados.
+- Estratégias #stress[emergem] das *dinâmicas* durante as simulações e o aprendizado.
+  - Desnecessário conhecimento prévio além das regras.
 
 
 == Domínio
