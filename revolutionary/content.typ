@@ -83,17 +83,18 @@
 
 == Domínio
 
-#stress[Nem todos] os @jogo:pl são computacionalmente *equiparáveis*!
-- Nos #glossarium.gls("jogo_turno", plural: true, display: stress(glossarium.gls-plural("jogo_turno"))), o tempo passa de forma *discreta*;
-- Nos #stress[jogos contínuos], o tempo passa  em *#get_term("frame", plural: true)* de simulação e renderização.
+#stress[Classes] de jogos.
+- #stress[Contínuos]: tempo passa como no mundo *real* --- simulado em frames.
+- #glossarium.gls("jogo_turno", plural: true, display: stress[Turnos]): tempo passa de forma *discreta* --- sequência de @estado:pl.
 
-O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno:pl*.
-- Cada *jogada* é representada como um @turno,
-- que é salvo como um *nó* de uma *árvore* de busca.
-- Cada *@movimento* leva a um novo *@estado*.
-- A informação dos @estado:pl deve ser *completa*, visível a todos os @jogador:pl.
-
-É #stress[impossível] utilizar os métodos de busca em árvore em @jogo:pl contínuos.
+#stress[Domínio]:
+- Apenas #stress[@jogo_turno:pl].
+  - Cada *jogada* é representada como um *@turno*
+    - salvo no *histórico* --- árvore de busca.
+- #stress[Determinismo]: cada *@movimento* leva a um único novo *@estado*.
+- Informação #stress[completa] --- visível a todos os @jogador:pl.
+  - Perfeitamente serializável.
+  - Avaliada por função de qualidade objetiva.
 
 
 == Situação de contorno
@@ -101,15 +102,13 @@ O artigo de referência estabelece como #stress[domínio] apenas os *@jogo_turno
 Existem fatores de *limitação* do #stress[escopo]
 - Poderiam ser superados em trabalhos futuros.
 
-Apenas é possível *aplicar* o método para #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(glossarium.gls-plural("jogo_tabuleiro"))).
-- A modelagem dos *@estado:pl* requer que sejam
-  - formados por uma #stress[matriz de #glossarium.gls("casa", plural: true, display: stress(glossarium.gls-plural("casa")))], como uma *imagem*, que é
-    - domínio em que as @cnn:pl operam.
+Restrito a #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(glossarium.gls-plural("jogo_tabuleiro"))).
+- @Estado deve ser uma #stress[matriz] de #glossarium.gls("casa", plural: true, display: strong(glossarium.gls-plural("casa"))) --- como uma *imagem*
+- @Jogo:pl de cartas poderiam funcionar com adaptações.
 
-O método abordou apenas @partida:pl entre #stress[dois #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador")))].
-- A *@mcts* alterna os níveis da *árvore de busca* entre cada @jogador.
-
-#stress[Crítica:] apesar de o método almejar ser #stress[genérico] (dadas as situações de contorno) os autores fizeram experimentações *apenas com os jogos* Go, Xadrez e Shogi.
+@Partida:pl entre #stress[dois #glossarium.gls("jogador", plural: true, display: stress(glossarium.gls-plural("jogador")))].
+- A árvore de *busca* alterna os níveis entre cada @jogador.
+- Existem trabalhos que a adaptam para múltiplos jogadores.
 
 
 == Abstração
