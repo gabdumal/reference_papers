@@ -4,50 +4,48 @@
 
 == Apresentação
 
-- Pesquisa do laboratório *Google Deepmind*.
-  - @Jogador:pl artificiais de Go por aprendizado por reforço.
-- Publicada na revista #stress[Nature] em *2016*.
-  - Fator de impacto de *48,5* (2024).
-- #stress[13509] citações.
-  - Percentil *99* de atenção.
+- #cite_prose(<silver:2016:mastering_game_go>)#footnote[
+    #cite(form: "full", <silver:2016:mastering_game_go>)
+  ] é uma pesquisa do laboratório *Google Deepmind*.
 
-- Impacto dos *autores* principais (desde 2021):
-  - David Silver: h-index de #stress[89]\;
-  - Aja Huang: h-index de #stress[13]\;
-  - Chris J. Maddison: h-index de #stress[31].
+#grid(
+  columns: (1fr, 1fr),
+  [
+    - Publicada na revista #stress[Nature] em *2016*.
+      - Fator de impacto de *48,5* (2024).
+    - #stress[13509] citações.
+      - Percentil *99* de atenção.
+  ],
+  align(start)[
+    - Impacto dos *autores* principais (desde 2021):
+      - David Silver: h-index de #stress[89]\;
+      - Aja Huang: h-index de #stress[13]\;
+      - Chris J. Maddison: h-index de #stress[31].
+  ],
+)
+
 
 == Paradigma
 
-O artigo em discussão @silver:2018:general_reinforcement_learning_algorithm
-#footnote[
-  #cite(
-    form: "full",
-    <silver:2018:general_reinforcement_learning_algorithm>,
-  )
-]
-evolui uma tecnologia de #stress(glossarium.gls-custom("selfplay")) (*@selfplay*) para os @jogo_tabuleiro:pl Go, Xadrez e Shogi.
-
-Esse desenvolvimento surge dentro da transição entre #stress[paradigmas], cuja transformação se deu pela publicação do artigo revolucionário de
-#cite_prose(<silver:2016:mastering_game_go>)
-#footnote[
-  #cite(form: "full", <silver:2016:mastering_game_go>)
-].
-
-Ambos os artigos fazem parte de uma #stress[pesquisa contínua] realizada pelo laboratório de *@ia* #foreign_text[Google DeepMind].
-
-O #stress[paradigma] dado pelo artigo *revolucionário* (AlphaGo)
-indica que:
-- é possível usar @rn:pl para
-- gerar *@agint:pl* que
-- joguem #stress[Go] (e nenhum outro jogo) melhor que
-  - @jogador:pl profissionais e algoritmos no estado-da-arte.
-
-O método revolucionário usava dois passos de *treinamento*:
-- aprendizado #stress[supervisionado] com base em históricos de @partida:pl de profissionais;
-- aprendizado por #stress[reforço] com base em @selfplay, em que
-  - a função de gratificação usa o *paradigma clássico* de
-    - @mcts.
-
+#grid(
+  columns: (1fr, 1fr),
+  [
+    Paradigma #stress[atual]:
+    - métodos de @ia clássicos para simular @jogador:pl;
+      - Arvores de *busca*;
+    - simulação cresce em espaço e em *tempo* para @jogo:pl complexos;
+      - exaustão impossível para o @jogo Go.
+  ],
+  align(start)[
+    Paradigma #stress[revolucionário]:
+    - baseia-se em *@agint:pl*
+      - jogam Go como profissionais;
+      - estruturados em *@rn:pl*;
+      - aprendizado por reforço;
+    - caráter estocástico;
+    - política de busca *orientada*, e não poda.
+  ],
+)
 
 == Hipótese
 
