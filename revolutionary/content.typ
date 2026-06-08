@@ -113,30 +113,38 @@ Restrito a #glossarium.gls("jogo_tabuleiro", plural: true, display: stress(gloss
 
 == Abstração
 
-No contexto do artigo, um #stress[@jogo] é tido como um objeto de características *limitadas*.
+Um #stress[@jogo] é tido como objeto de características *limitadas*.
 
-#stress[Não] são levados em *consideração* aspectos como:
+#stress[Não] *considera* aspectos como:
 - diversão dos @jogador:pl e caráter lúdico;
-- desenho artístico e desenvolvimento de tema; ou
-- material físico e manipulação de objetos no mundo real.
+- desenho artístico e temática; ou
+- material físico e manipulação de objetos.
 
-Isso destaca a #stress[abstração] realizada, ao considerar apenas
-- os aspectos do @jogo que interessam à *modelagem computacional* e que
+#stress[Considera] apenas:
+- aspectos do @jogo que interessam à *modelagem computacional*,
+  - como peças, casas, movimentos, etc., que
 - possibilitam analisar a #stress[complexidade] de
-  - *dinâmicas* (ou estratégias) emergentes durante as @partida:pl.
+  - *dinâmicas* emergentes durante as @partida:pl.
+
+Abstrai #stress[progressão] do jogo como:
+- seleção de jogadas com função de *valor* (idealmente) ótima.
 
 
 == Reducionismo
 
-Durante o processo de #glossarium.gls("selfplay", display: stress(glossarium.gls-short("selfplay"))), uma série de @partida:pl são *simuladas* por @agint:pl em níveis progressivos de treinamento.
-- Ao chegar ao @estado de fim de @jogo, a *@pontuacao* é registrada.
+Durante o aprendizado, uma série de @partida:pl são *simuladas* contra humanos e contra o próprio sistema.
+- Ao fim de cada jogatina, o #stress[histórico] é registrado.
+- Dados de experiência de jogo são irrelevantes.
 
-O algoritmo #stress[reduz] cada *@turno* a:
+O algoritmo #stress[reduz] cada *@turno* salvo a:
 - o *@estado* do tabuleiro prévio;
 - o *@movimento* jogado; e
-- a *@pontuacao* obtida pelo respectivo @jogador.
+- a *resultado* final da @partida.
 
-Essa estrutura é usada para #stress[ajustar] os *@peso:pl e @vies:pl* do modelo parcial durante o treinamento em aprendizado por reforço.
+Estrutura suficiente para treinar modelos de @ia e realizar análises estatísticas.
+- *Estratégias* #stress[não] são representadas.
+- Uma jogada é melhor que outra se tem *resultado* melhor da função de avaliação.
+- @Jogador sintético apenas avalia e seleciona algoritmicamente.
 
 
 == Experimento
